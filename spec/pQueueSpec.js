@@ -13,10 +13,17 @@ describe('PQueue', () => {
   context('enqueue()', () => {
     it('adds a key value pair to an object.', () => {
       const myPQueue = new PQueue()
-      myPQueue.enqueue('foo', 2)
-      expect(() => myPQueue.enqueue( 'foo', 2).to.equal('{foo:2}'));
-      console.log(myPQueue)
+      myPQueue.enqueue(2, 'foo')
+      expect(myPQueue.length).to.equal(1);
     })
   })
 
+})
+
+context('dequeue()', () => {
+  it('removes a key-value pair from an object', () => {
+    const myPQueue = new PQueue( 2, 'foo' )
+    myPQueue.dequeue()
+    expect(myPQueue.length).to.equal(0);
+  })
 })
