@@ -28,11 +28,7 @@ export default class Set {
 
   contains(stuff) {
     for(var i = 0; i < this.data.length; i++ ) {
-      if(this.data[i] == stuff) {
-        return true
-      }else{
-        return false
-      }
+      return this.data[i] === stuff
     }
   }
 
@@ -42,7 +38,8 @@ export default class Set {
     }
   }
 
-  forEach() {
+  forEach(func) {
+     return this.stuff.map(thing => func(thing))
 
   }
 
