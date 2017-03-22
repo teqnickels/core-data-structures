@@ -37,7 +37,9 @@ export default class Set {
   }
 
   remove() {
-
+    if(this.data.length > 0 ) {
+      this.data.pop()
+    }
   }
 
   forEach() {

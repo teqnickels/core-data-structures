@@ -45,4 +45,16 @@ describe('Set', () => {
     })
   })
 
+  context('remove()', () => {
+    it('removes an item from set if set contains any items when called', () => {
+      const mySet = new Set()
+
+      expect(() => mySet.add('moo')).to.alter(() => mySet.size(), { from:0, to:1 });
+      expect(() => mySet.add('boo')).to.alter(() => mySet.size(), { from:1, to:2 });
+      expect(() => mySet.add('foo')).to.alter(() => mySet.size(), { from:2, to:3 });
+      expect(() => mySet.remove()).to.alter(() => mySet.size(), { from:3, to:2 });
+
+    })
+  })
+
 })
