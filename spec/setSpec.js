@@ -58,7 +58,7 @@ describe('Set', () => {
   })
 
   context('forEach', () => {
-    it.only('takes a callback function and does something to each element in set', () => {
+    it('takes a callback function and does something to each element in set', () => {
       const mySet = new Set()
 
       var doubleSum = function(num) {
