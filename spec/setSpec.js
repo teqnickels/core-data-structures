@@ -57,4 +57,20 @@ describe('Set', () => {
     })
   })
 
+  context('forEach', () => {
+    it.only('takes a callback function and does something to each element in set', () => {
+      const mySet = new Set()
+
+      var doubleSum = function(num) {
+        return num + num
+      }
+
+      expect(() => mySet.add('1')).to.alter(() => mySet.size(), { from:0, to:1 });
+      expect(() => mySet.add('2')).to.alter(() => mySet.size(), { from:1, to:2 });
+      expect(() => mySet.add('3')).to.alter(() => mySet.size(), { from:2, to:3 });
+      expect(() => mySet.forEach(doubleSum(10)).to.equal([10, 12, 13]))
+
+    })
+  })
+
 })
