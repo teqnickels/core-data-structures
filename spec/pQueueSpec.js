@@ -37,7 +37,29 @@ context('back()', () => {
     myPQueue.enqueue(1,'foo')
     myPQueue.enqueue(3,'moo')
 
-    console.log(myPQueue.back())
     expect(myPQueue.back()).to.eql( {priority: 5, value:'boo'} );
+  })
+})
+
+context('isEmpty', () => {
+  it('checks if pqueue is empty', () => {
+    const myPQueue = new PQueue()
+    myPQueue.enqueue(5,'boo')
+    myPQueue.enqueue(1,'foo')
+    myPQueue.enqueue(3,'moo')
+
+    expect(myPQueue.isEmpty()).to.eql( false );
+  })
+})
+
+context('length', () => {
+  it.only('returns the length of the array of pqueue', () => {
+    const myPQueue = new PQueue()
+    myPQueue.enqueue(5,'boo')
+    myPQueue.enqueue(1,'foo')
+    myPQueue.enqueue(3,'moo')
+
+    console.log(myPQueue.length);
+    expect(myPQueue.length).to.equal(3);
   })
 })
