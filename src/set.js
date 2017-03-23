@@ -10,10 +10,12 @@ export default class Set {
           if( this.data[i] == stuff ){
             return "ERROR, " + stuff + " already exists"
           }else{
+            this.length+=1
           return this.data.push(stuff)
           }
         }
       }else{
+        this.length+=1
         return this.data.push(stuff)
       }
   }
@@ -52,7 +54,16 @@ export default class Set {
   }
 
   intersect(otherSet) {
-
+    var temp = new Set()
+    console.log('OTHER', otherSet);
+    for(var i = 0; i < this.data.length; i++) {
+      for(var j = 0; j < otherSet.length; j++){
+        if(this.data[i]===otherSet.data[j]){
+           temp.add(otherSet.data[j])
+        }
+      }
+    }
+    return temp
   }
 
   difference(otherSet) {
