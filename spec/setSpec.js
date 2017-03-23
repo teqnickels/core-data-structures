@@ -81,9 +81,25 @@ describe('Set', () => {
       mySet.add('boo')
       mySet.add('moo')
 
-
-      console.log(mySet.union(boop));
       expect(() => mySet.union(boop).to.equal([ 'foop', 'moop', 'doop', 'foo', 'boo', 'moo' ]))
+    })
+  })
+
+  context('intersect', () => {
+    it('finds where two sets intersect and adds those elements to a new set', () =>{
+      var foo = new Set()
+      foo.add('moo')
+      foo.add('doo')
+      foo.add('poo')
+      foo.add('doo')
+
+      var loo = new Set()
+      loo.add('roo')
+      loo.add('doo')
+      loo.add('too')
+      loo.add('poo')
+
+      expect(() => foo.intersect(loo).to.equal(['doo', 'poo']))
     })
   })
 
