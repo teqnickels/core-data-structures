@@ -53,7 +53,7 @@ context('isEmpty', () => {
 })
 
 context('length', () => {
-  it.only('returns the length of the array of pqueue', () => {
+  it('returns the length of the array of pqueue', () => {
     const myPQueue = new PQueue()
     myPQueue.enqueue(5,'boo')
     myPQueue.enqueue(1,'foo')

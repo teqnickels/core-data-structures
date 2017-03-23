@@ -58,7 +58,7 @@ describe('Set', () => {
   })
 
   context('forEach', () => {
-    it.only('takes a callback function and does something to each element in set', () => {
+    it('takes a callback function and does something to each element in set', () => {
       const mySet = new Set()
 
       var doubleSum = function(num) {
@@ -70,6 +70,20 @@ describe('Set', () => {
       expect(() => mySet.add('3')).to.alter(() => mySet.size(), { from:2, to:3 });
       expect(() => mySet.forEach(doubleSum(10)).to.equal([10, 12, 13]))
 
+    })
+  })
+
+  context('union', () => {
+    it('joins one set with another set', () => {
+      var boop = ['foop', 'moop', 'doop']
+      const mySet = new Set()
+      mySet.add('foo')
+      mySet.add('boo')
+      mySet.add('moo')
+
+
+      console.log(mySet.union(boop));
+      expect(() => mySet.union(boop).to.equal([ 'foop', 'moop', 'doop', 'foo', 'boo', 'moo' ]))
     })
   })
 

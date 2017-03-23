@@ -47,8 +47,8 @@ export default class Set {
     return this.data.length
 
   }
-  union(otherSet) {
-
+  union(setB) {
+    return setB.concat(this.data)
   }
 
   intersect(otherSet) {
