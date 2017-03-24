@@ -29,10 +29,19 @@ export default class Set {
   }
 
   contains(stuff) {
+    var instanceOfMatch = 0
     for(var i = 0; i < this.data.length; i++ ) {
-      return this.data[i] === stuff
-    }
-  }
+      if(this.data[i] === stuff) {
+        instanceOfMatch++
+      }
+    } console.log('INSTANCE',instanceOfMatch);
+     if(instanceOfMatch > 0){
+       return true
+     }else{
+       return false
+     }
+   }
+
 
   remove() {
     if(this.data.length > 0 ) {
@@ -55,10 +64,9 @@ export default class Set {
 
   intersect(otherSet) {
     var temp = new Set()
-    console.log('OTHER', otherSet);
     for(var i = 0; i < this.data.length; i++) {
       for(var j = 0; j < otherSet.length; j++){
-        if(this.data[i]===otherSet.data[j]){
+        if(this.data[i]=== otherSet.data[j]){
            temp.add(otherSet.data[j])
         }
       }
@@ -66,9 +74,23 @@ export default class Set {
     return temp
   }
 
-  difference(otherSet) {
+  difference(set) {
+    var tempSet = new Set();
+    for(var i = 0; i < this.data.length; ++i) {
+      if(!set.contains(this.data[i])) {
+        tempSet.add(this.data[i]);
+      }
+    }
+    for(var i = 0; i < set.data.length; ++i) {
+      if(!this.contains(set.data[i])) {
+        tempSet.add(set.data[i]);
+      }
+    }
+  return tempSet.data;
+}
 
-  }
+
+
 
   isSubset(otherSet) {
 

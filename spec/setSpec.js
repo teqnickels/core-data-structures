@@ -38,9 +38,12 @@ describe('Set', () => {
       mySet.add('boo')
       mySet.add('foo')
       mySet.add('moo')
+      mySet.add('foo')
 
-      expect(mySet.contains('boo')).to.be.true;
-      expect(mySet.contains('woo')).to.be.false;
+
+      console.log(mySet.contains('foo'));
+      expect(mySet.contains('foo')).to.be.true
+      expect(mySet.contains('woo')).to.be.false
 
     })
   })
@@ -99,7 +102,27 @@ describe('Set', () => {
       loo.add('too')
       loo.add('poo')
 
+      console.log(foo.intersect(loo));
       expect(() => foo.intersect(loo).to.equal(['doo', 'poo']))
+    })
+  })
+
+  context('difference', () => {
+    it('finds where two sets differ and adds those unique elements to a new set', () =>{
+      var foo = new Set()
+      foo.add('moo')
+      foo.add('doo')
+      foo.add('poo')
+      foo.add('boo')
+
+      var loo = new Set()
+      loo.add('moo')
+      loo.add('doo')
+      loo.add('too')
+      loo.add('poo')
+
+      console.log(foo.difference(loo));
+      expect(() => foo.difference(loo).to.eql(['too', 'boo']))
     })
   })
 
