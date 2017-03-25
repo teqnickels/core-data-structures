@@ -104,7 +104,12 @@ export default class Set {
 
 
   clone() {
-
+    var arrClone = [];
+    console.log('HERE');
+    for(var i = 0; i < this.data.length; i++) {
+      arrClone.push(this.data[i])
+    }
+    return arrClone
   }
 
 }
