@@ -108,7 +108,7 @@ describe('Set', () => {
   })
 
   context('difference', () => {
-    it('finds where two sets differ and adds those unique elements to a new set', () =>{
+    it('finds where two sets differ and adds those unique elements to a new set', () => {
       var foo = new Set()
       foo.add('moo')
       foo.add('doo')
@@ -121,9 +121,37 @@ describe('Set', () => {
       loo.add('too')
       loo.add('poo')
 
-      console.log(foo.difference(loo));
       expect(() => foo.difference(loo).to.eql(['too', 'boo']))
     })
   })
+
+  context('isSubset', () => {
+    it('returns true if the set is a subset of otherSet or false if not', () => {
+      var smallSet = new Set()
+      smallSet.add(3)
+      smallSet.add(4)
+      smallSet.add(5)
+      console.log('SMALL',smallSet);
+
+
+      var largeSet = new Set()
+      largeSet.add(1)
+      largeSet.add(2)
+      largeSet.add(3)
+      largeSet.add(4)
+      largeSet.add(5)
+      largeSet.add(6)
+
+      expect(smallSet.isSubset(largeSet)).to.be.false
+      expect(largeSet.isSubset(smallSet)).to.be.true
+
+    })
+  })
+
+
+
+
+
+
 
 })
