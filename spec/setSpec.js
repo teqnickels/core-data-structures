@@ -41,7 +41,6 @@ describe('Set', () => {
       mySet.add('foo')
 
 
-      console.log(mySet.contains('foo'));
       expect(mySet.contains('foo')).to.be.true
       expect(mySet.contains('woo')).to.be.false
 
@@ -102,7 +101,6 @@ describe('Set', () => {
       loo.add('too')
       loo.add('poo')
 
-      console.log(foo.intersect(loo));
       expect(() => foo.intersect(loo).to.equal(['doo', 'poo']))
     })
   })
@@ -131,7 +129,6 @@ describe('Set', () => {
       smallSet.add(3)
       smallSet.add(4)
       smallSet.add(5)
-      console.log('SMALL',smallSet);
 
 
       var largeSet = new Set()
@@ -149,8 +146,15 @@ describe('Set', () => {
   })
 
 
-
-
+  context('clone', () => {
+    it('returns a copy of set', () => {
+      var foo = new Set()
+      foo.add(3)
+      foo.add(4)
+      foo.add(5)
+      expect(() => foo.clone().to.equal([3, 4, 5]))
+    })
+  })
 
 
 
