@@ -34,7 +34,7 @@ export default class Set {
       if(this.data[i] === stuff) {
         instanceOfMatch++
       }
-    } console.log('INSTANCE',instanceOfMatch);
+    }
      if(instanceOfMatch > 0){
        return true
      }else{
@@ -89,12 +89,19 @@ export default class Set {
   return tempSet.data;
 }
 
-
-
-
-  isSubset(otherSet) {
-
+  isSubset(smallSet) {
+    if(smallSet.size > this.size){
+      return false
+    }else{
+      for(let i of smallSet.data) {
+        if(!this.contains(i) ){
+          return false
+        }
+      }
+      return true
+    }
   }
+
 
   clone() {
 
