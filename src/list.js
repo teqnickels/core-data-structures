@@ -10,8 +10,7 @@ export default class List {
 
 
   getHeadNode() {
-    const myNode = new Node(data)
-    return this.head
+    return this.head.data
   }
 
   getTailNode() {
@@ -28,14 +27,14 @@ export default class List {
     var currentNode = this.head
     if(!currentNode){
       this.head = node
-      node.size = this.size + 1
+      this.size++
       return node
     }
     while(currentNode.next){
       currentNode = currentNode.next
     }
     currentNode.next = node;
-    node.size= this.size + 1
+    this.size++
     return node
   }
 

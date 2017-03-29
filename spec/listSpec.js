@@ -19,4 +19,15 @@ describe('list', () => {
       expect(firstNode.insert('Hello')).to.eql({ data: 'Hello', next: null, size: 1 } )
         })
       })
+
+  context('getHeadNode', () => {
+    it('returns the head node of a linked list', () => {
+      const listy = new List()
+      listy.insert('foo')
+      listy.insert('boo')
+      listy.insert('moo')
+      expect(listy.getHeadNode()).to.equal('foo')
+    })
+  })
+
 })
