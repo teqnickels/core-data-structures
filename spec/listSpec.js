@@ -15,8 +15,9 @@ describe('list', () => {
 
   context('insert()', () => {
     it('adds element to linked list',() => {
-      const firstNode = new List()
-      expect(firstNode.insert('Hello')).to.eql({ data: 'Hello', next: null, size: 1 } )
+      const foolisty = new List()
+      foolisty.insert('foo')
+      expect(foolisty.size).to.equal( 1 )
         })
       })
 
@@ -24,10 +25,21 @@ describe('list', () => {
     it('returns the head node of a linked list', () => {
       const listy = new List()
       listy.insert('foo')
-      listy.insert('boo')
       listy.insert('moo')
+      console.log('LIST',listy);
+
+      console.log(listy.getTailNode());
       expect(listy.getHeadNode()).to.equal('foo')
     })
   })
 
+  context('getTailNode', () => {
+    it('returns the tail node of a linked list', () => {
+      const listy = new List()
+      listy.insert('foo')
+      listy.insert('boo')
+      listy.insert('moo')
+      expect(listy.getTailNode()).to.equal('moo')
+    })
+  })
 })

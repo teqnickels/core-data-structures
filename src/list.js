@@ -4,7 +4,7 @@ import Node from './myNode'
 export default class List {
   constructor() {
     this.head = null;
-    this.tail = null;
+    this.tail = null
     this.size = 0;
   }
 
@@ -14,11 +14,10 @@ export default class List {
   }
 
   getTailNode() {
-    return this.tail
+    return this.tail.data
   }
 
   contains(stuff) {
-    return this.element = stuff
   }
 
 
@@ -28,14 +27,15 @@ export default class List {
     if(!currentNode){
       this.head = node
       this.size++
-      return node
+    }else{
+      while(currentNode.next){
+        currentNode = currentNode.next
+      }
+      currentNode.next = node;
+      this.tail = node;
+      this.size++
     }
-    while(currentNode.next){
-      currentNode = currentNode.next
-    }
-    currentNode.next = node;
-    this.size++
-    return node
+
   }
 
 
