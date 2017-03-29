@@ -33,7 +33,7 @@ describe('list', () => {
     })
   })
 
-  context('getTailNode', () => {
+  context('getTailNode()', () => {
     it('returns the tail node of a linked list', () => {
       const listy = new List()
       listy.insert('foo')
@@ -42,4 +42,18 @@ describe('list', () => {
       expect(listy.getTailNode()).to.equal('moo')
     })
   })
+
+  context('contains()', () => {
+    it('Determines whether or not the list contains the provided data', () => {
+      const listy = new List()
+      listy.insert('foo')
+      listy.insert('bananas')
+      listy.insert('moo')
+
+      expect(listy.contains('bananas')).to.be.true
+      expect(listy.contains('boo')).to.be.false
+
+    })
+  })
+
 })

@@ -18,8 +18,20 @@ export default class List {
   }
 
   contains(stuff) {
+    var currentNode = this.head;
+    if(!currentNode) {
+      return false
+    }else{
+      while(currentNode.next!== null) {
+          currentNode = currentNode.next
+          if(currentNode.data === stuff) {
+            return true
+          }else{
+            return false
+          }
+      }
+    }
   }
-
 
   insert(data) {
     const node = new Node(data)
