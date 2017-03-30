@@ -61,7 +61,11 @@ export default class List {
     }
   }
 
-  insertAfter() {
+  insertAfter(stuff) {
+    const node = new Node(stuff)
+    if(this.next) {
+
+    }
 
   }
   remove() {
