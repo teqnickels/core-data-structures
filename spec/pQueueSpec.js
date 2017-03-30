@@ -58,8 +58,6 @@ context('length', () => {
     myPQueue.enqueue(5,'boo')
     myPQueue.enqueue(1,'foo')
     myPQueue.enqueue(3,'moo')
-
-    console.log(myPQueue.length);
     expect(myPQueue.length).to.equal(3);
   })
 })

@@ -17,7 +17,7 @@ export default class PQueue {
 
   dequeue(){
     this.length = this.length - 1
-    return this.line.shift
+    return this.line.shift()
   }
 
   back() {

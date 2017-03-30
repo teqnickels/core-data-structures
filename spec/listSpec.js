@@ -26,9 +26,6 @@ describe('list', () => {
       const listy = new List()
       listy.insert('foo')
       listy.insert('moo')
-      console.log('LIST',listy);
-
-      console.log(listy.getTailNode());
       expect(listy.getHeadNode()).to.equal('foo')
     })
   })
@@ -53,6 +50,16 @@ describe('list', () => {
       expect(listy.contains('bananas')).to.be.true
       expect(listy.contains('boo')).to.be.false
 
+    })
+  })
+
+  context('insert-first()', () => {
+    it('Inserts a node (with the provided data) to the head of the list', () => {
+      const listy = new List()
+      listy.insert('foo')
+      listy.insert('bar')
+      listy.insertFirst('DEBRENA')
+      expect(listy.head.data).to.equal('DEBRENA')
     })
   })
 
