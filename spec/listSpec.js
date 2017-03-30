@@ -57,7 +57,7 @@ describe('list', () => {
   })
 
   context('insert-first()', () => {
-    it.only('Inserts a node (with the provided data) to the head of the list', () => {
+    it('Inserts a node (with the provided data) to the head of the list', () => {
       const listy = new List()
       listy.insert('foo')
       listy.insert('bar')
