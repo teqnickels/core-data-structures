@@ -61,13 +61,20 @@ export default class List {
     }
   }
 
-  insertAfter(stuff) {
-    const node = new Node(stuff)
-    if(this.next) {
-
-    }
-
+  insertAfter(alreadyInList, addThis) {
+    const node = new Node(addThis)
+    var currentNode = this.head;
+      while(currentNode.next) {
+          currentNode = currentNode.next
+          if(currentNode.data == alreadyInList) {
+            console.log('CURRENT', currentNode);
+            console.log('CURRENTNEXT', currentNode.next);
+            currentNode.next = node
+            node.next == currentNode.next
+          }
+     }return this
   }
+
   remove() {
 
   }
@@ -84,7 +91,7 @@ export default class List {
 
   }
 
-  clear(){
+  clear() {
 
   }
 
