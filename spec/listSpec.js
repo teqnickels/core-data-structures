@@ -56,4 +56,14 @@ describe('list', () => {
     })
   })
 
+  context('insert-first()', () => {
+    it('Inserts a node (with the provided data) to the head of the list', () => {
+      const listy = new List()
+      listy.insert('foo')
+      listy.insert('bar')
+      listy.insertFirst('DEBRENA')
+      expect(listy.head.data).to.equal('DEBRENA')
+    })
+  })
+
 })

@@ -50,8 +50,15 @@ export default class List {
   }
 
 
-  insertFirst() {
-
+  insertFirst(stuff) {
+    const node = new Node(stuff)
+    if(!this.next){
+      this.head = node
+    }else{
+      node.next = this.head
+      this.head = node
+      this.size++
+    }
   }
 
   insertAfter() {
