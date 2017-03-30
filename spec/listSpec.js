@@ -73,4 +73,17 @@ describe('list', () => {
     })
   })
 
+  context('insert-after()', () => {
+    it('Inserts a node (with data "bananas") after the first node containing "apples"', () => {
+      const listy = new List()
+      listy.insert('oranges')
+      listy.insert('apples')
+      listy.insert('grapes')
+
+      console.log('FRUITS',listy.insertAfter('apples', 'bananas', 'temp'));
+      // expect(listy.head.data).to.equal('DEBRENA')
+    })
+  })
+
+
 })
